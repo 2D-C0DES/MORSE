@@ -1,4 +1,4 @@
-# ⚡ Morse Lover
+# ⚡Morse⚡
 
 > “Love is the one thing that transcends time and space.”
 > — Interstellar
@@ -67,7 +67,7 @@ A tribute to:
 
 ---
 
-# 🛰️ What Is Morse Lover?
+# 🛰️ What Is Morse ?
 
 Morse Lover is a beautifully designed Python-based Morse Code Encoder & Decoder system.
 
@@ -152,7 +152,7 @@ Inspired by:
 project_folder/
 │
 ├── morse_backend.py
-├── morse_lover_dashboard.py
+├── dashboard.py
 ├── requirements.txt
 └── README.md
 ```
@@ -381,4 +381,4 @@ If this project made you smile,
 made you nostalgic about Interstellar,
 or made you curious about communication systems,
 
-then Morse Lover has already fulfilled its purpose.
+then Morse has already fulfilled its purpose.
