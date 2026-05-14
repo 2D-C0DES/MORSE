@@ -176,8 +176,7 @@ Desktop.ini
 # STATIC GENERATED FILES
 # =========================================================
 
-static/generated/
-static/uploads/
+static/
 media/
 uploads/
 

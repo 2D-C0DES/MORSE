@@ -28,6 +28,10 @@ Features:
 
 from typing import Dict
 
+import numpy as np
+import wave
+import struct
+
 
 class MorseCodeTranslator:
     """
@@ -119,7 +123,7 @@ class MorseCodeTranslator:
     # =========================================================
 
     def text_to_morse(self, text: str) -> str:
-        
+
         """
         Convert normal text into Morse code
 
@@ -183,6 +187,90 @@ class MorseCodeTranslator:
             decoded_output.append(decoded_word)
 
         return ' '.join(decoded_output)
+    
+        # =========================================================
+    # MORSE AUDIO GENERATOR
+    # =========================================================
+
+    def generate_morse_audio(
+        self,
+        morse_code: str,
+        output_file: str = "static/morse_audio.wav",
+        frequency: int = 700,
+        unit_duration: float = 0.1,
+        sample_rate: int = 44100
+    ):
+        """
+        Generate real Morse code audio as WAV file
+
+        Parameters:
+            morse_code (str): Morse sequence
+            output_file (str): Output WAV file path
+            frequency (int): Beep frequency
+            unit_duration (float): Morse timing unit
+            sample_rate (int): Audio sample rate
+        """
+
+        audio_data = []
+
+        DOT_DURATION = unit_duration
+        DASH_DURATION = unit_duration * 3
+
+        SYMBOL_SPACE = unit_duration
+        LETTER_SPACE = unit_duration * 3
+        WORD_SPACE = unit_duration * 7
+
+        amplitude = 32767
+
+        def generate_tone(duration):
+
+            samples = np.arange(
+                int(sample_rate * duration)
+            )
+
+            wave_data = amplitude * np.sin(
+                2 * np.pi * frequency * samples / sample_rate
+            )
+
+            return wave_data.astype(np.int16)
+
+        def generate_silence(duration):
+
+            silence = np.zeros(
+                int(sample_rate * duration),
+                dtype=np.int16
+            )
+
+            return silence
+
+        for symbol in morse_code:
+
+            if symbol == '.':
+                audio_data.extend(generate_tone(DOT_DURATION))
+                audio_data.extend(generate_silence(SYMBOL_SPACE))
+
+            elif symbol == '-':
+                audio_data.extend(generate_tone(DASH_DURATION))
+                audio_data.extend(generate_silence(SYMBOL_SPACE))
+
+            elif symbol == ' ':
+                audio_data.extend(generate_silence(LETTER_SPACE))
+
+            elif symbol == '/':
+                audio_data.extend(generate_silence(WORD_SPACE))
+
+        with wave.open(output_file, 'w') as wav_file:
+
+            wav_file.setnchannels(1)
+            wav_file.setsampwidth(2)
+            wav_file.setframerate(sample_rate)
+
+            wav_frames = b''
+
+            for sample in audio_data:
+                wav_frames += struct.pack('<h', int(sample))
+
+            wav_file.writeframes(wav_frames)
 
     # =========================================================
     # PRETTY PRINT FUNCTIONS

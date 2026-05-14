@@ -14,7 +14,7 @@ Open Browser:
 ===========================================================
 """
 
-from flask import Flask, render_template_string, request
+from flask import Flask, render_template_string, request , send_file
 from morse_backend import MorseCodeTranslator
 
 app = Flask(__name__)
@@ -202,6 +202,15 @@ HTML_TEMPLATE = """
         <div class="output-box">
 {{ output }}
         </div>
+        {% if output %}
+<div style="margin-top:20px;">
+
+    <audio controls style="width:100%;">
+        <source src="/audio" type="audio/wav">
+    </audio>
+
+</div>
+{% endif %}
 
         <div class="footer">
             Built with Python + Flask ❤️
@@ -232,6 +241,7 @@ def home():
 
         if action == "encode":
             output = translator.text_to_morse(user_input)
+            translator.generate_morse_audio(output)
 
         elif action == "decode":
             output = translator.morse_to_text(user_input)
@@ -244,6 +254,14 @@ def home():
         HTML_TEMPLATE,
         output=output,
         user_input=user_input
+    )
+
+@app.route("/audio")
+def audio():
+
+    return send_file(
+        "static/morse_audio.wav",
+        mimetype="audio/wav"
     )
 
 

@@ -151,13 +151,17 @@ Inspired by:
 ```text
 project_folder/
 │
-├── morse_backend.py
+├── static/
+│   └── morse_audio.wav
+│
+├── mors_backend.py
 ├── dashboard.py
 ├── requirements.txt
+├── .gitignore
 └── README.md
 ```
 
----
+
 
 # ⚙️ Technologies Used
 
@@ -311,7 +315,7 @@ Output:
 
 ---
 
-# 🔮 Future Improvements
+# 🔮Improvements
 
 Possible future upgrades:
 - Morse sound generation
@@ -326,6 +330,39 @@ Possible future upgrades:
 - Binary + Morse hybrid mode
 
 ---
+
+
+# Upgradations
+
+# 🔊 Real Morse Audio Playback
+
+One of the most exciting upgrades added to Morse Lover is the ability to generate real Morse code audio signals.
+
+The system now not only converts text into Morse symbols visually, but also transforms those signals into authentic audio beeps following actual Morse timing principles.
+
+Each:
+- dot (`.`) produces a short beep
+- dash (`-`) produces a longer beep
+- spaces generate realistic pauses between letters and words
+
+The generated audio is dynamically created as a `.wav` file using Python audio synthesis techniques and can be played directly from the web dashboard.
+
+This upgrade transforms Morse Lover from a simple text converter into a much more immersive communication simulation system inspired by historical telegraph systems and cinematic space communication concepts seen in Interstellar.
+
+### Technologies Used For Audio System
+
+- NumPy
+- Wave module
+- Audio signal synthesis
+- Flask file serving
+
+### Current Audio Features
+
+✅ Real Morse beep generation  
+✅ Accurate Morse timing structure  
+✅ Browser audio playback  
+✅ Dynamic WAV generation  
+✅ Integrated web dashboard playback  
 
 # 📚 Educational Value
 
@@ -382,3 +419,4 @@ made you nostalgic about Interstellar,
 or made you curious about communication systems,
 
 then Morse has already fulfilled its purpose.
+
