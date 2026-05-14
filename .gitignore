@@ -1,0 +1,357 @@
+# =========================================================
+# MORSE LOVER - ADVANCED .gitignore
+# =========================================================
+# Purpose:
+#   Ignore unnecessary, temporary, generated,
+#   system-specific, environment-specific,
+#   IDE-specific, and future-scalable files.
+#
+# This .gitignore is designed for:
+#   ✔ Flask projects
+#   ✔ Python backend systems
+#   ✔ Future AI/ML upgrades
+#   ✔ VS Code users
+#   ✔ Virtual environments
+#   ✔ Deployment preparation
+#   ✔ Cross-platform development
+# =========================================================
+
+
+# =========================================================
+# PYTHON CACHE FILES
+# =========================================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# =========================================================
+# COMPILED / DISTRIBUTION FILES
+# =========================================================
+
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+
+*.egg-info/
+*.egg
+MANIFEST
+
+
+# =========================================================
+# PYTHON INSTALLER LOGS
+# =========================================================
+
+pip-log.txt
+pip-delete-this-directory.txt
+
+
+# =========================================================
+# UNIT TEST / COVERAGE REPORTS
+# =========================================================
+
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+
+# =========================================================
+# JUPYTER NOTEBOOKS
+# =========================================================
+
+.ipynb_checkpoints
+
+
+# =========================================================
+# PYTHON ENVIRONMENT FILES
+# =========================================================
+
+.env
+.env.*
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+
+# =========================================================
+# FLASK SPECIFIC
+# =========================================================
+
+instance/
+.webassets-cache
+
+
+# =========================================================
+# SQLITE DATABASES
+# =========================================================
+
+*.sqlite3
+*.db
+
+
+# =========================================================
+# LOG FILES
+# =========================================================
+
+*.log
+logs/
+log/
+
+
+# =========================================================
+# TEMPORARY FILES
+# =========================================================
+
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.pid
+*.seed
+
+
+# =========================================================
+# IDE / EDITOR SETTINGS
+# =========================================================
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.un~
+
+# Emacs
+*~
+
+
+# =========================================================
+# OS GENERATED FILES
+# =========================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+
+# =========================================================
+# STATIC GENERATED FILES
+# =========================================================
+
+static/generated/
+static/uploads/
+media/
+uploads/
+
+
+# =========================================================
+# SECRET / CONFIG FILES
+# =========================================================
+
+secrets.json
+config.json
+credentials.json
+api_keys.json
+
+
+# =========================================================
+# AI / ML FUTURE UPGRADE SUPPORT
+# =========================================================
+
+# Model files
+*.h5
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.pb
+
+# TensorFlow / PyTorch caches
+tensorboard/
+runs/
+wandb/
+
+# Dataset files
+datasets/
+data/
+*.csv
+*.tsv
+*.parquet
+
+# NumPy
+*.npy
+*.npz
+
+
+# =========================================================
+# AUDIO / VIDEO FILES
+# (useful if Morse sound generation is added later)
+# =========================================================
+
+*.mp3
+*.wav
+*.ogg
+*.flac
+*.mp4
+*.avi
+*.mov
+
+
+# =========================================================
+# GENERATED EXPORT FILES
+# =========================================================
+
+exports/
+generated/
+output/
+outputs/
+
+
+# =========================================================
+# DOCKER
+# =========================================================
+
+.docker/
+docker-compose.override.yml
+
+
+# =========================================================
+# DEPLOYMENT FILES
+# =========================================================
+
+.heroku/
+.vercel/
+.netlify/
+
+
+# =========================================================
+# CACHE DIRECTORIES
+# =========================================================
+
+.cache/
+tmp/
+temp/
+
+
+# =========================================================
+# TYPE CHECKERS / LINTERS
+# =========================================================
+
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+
+
+# =========================================================
+# DOCUMENTATION BUILD FILES
+# =========================================================
+
+docs/_build/
+site/
+
+
+# =========================================================
+# FRONTEND PACKAGE MANAGERS
+# (future frontend scalability)
+# =========================================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+
+
+# =========================================================
+# REACT / NEXT / VITE FUTURE SUPPORT
+# =========================================================
+
+.next/
+.nuxt/
+dist/
+out/
+.vite/
+
+
+# =========================================================
+# SYSTEM RUNTIME FILES
+# =========================================================
+
+*.pid.lock
+
+
+# =========================================================
+# SECURITY
+# =========================================================
+
+*.pem
+*.key
+*.crt
+
+
+# =========================================================
+# LOCAL DEVELOPMENT FILES
+# =========================================================
+
+.local/
+local_settings.py
+
+
+# =========================================================
+# MORSE LOVER CUSTOM GENERATED FILES
+# =========================================================
+
+morse_output.txt
+decoded_output.txt
+encoded_output.txt
+
+
+# =========================================================
+# KEEP IMPORTANT EMPTY DIRECTORIES
+# =========================================================
+
+!.gitkeep
+
+
+# =========================================================
+# END OF FILE
+# =========================================================
