@@ -268,7 +268,7 @@ pip install -r requirements.txt
 # ▶️ Running The Application
 
 ```bash
-python morse_lover_dashboard.py
+python dashboard.py
 ```
 
 ---
